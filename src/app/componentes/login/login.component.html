@@ -1,0 +1,21 @@
+
+<h1>REGISTRO</h1>
+
+<div *ngIf="!isSignedIn">
+  <h2>Registrarse</h2>
+  <input type="text" #emailSignup/>
+  <input type="password" #passwordSignup/>
+  <button (click)="onSignup(emailSignup.value,passwordSignup.value)">Sign up</button>
+</div>
+<hr>
+<div *ngIf="!isSignedIn">
+  <h2>Acceder</h2>
+  <input type="text" #email/>
+  <input type="password" #password/>
+  <button (click)="onSignin(email.value,password.value)">Sign in</button>
+</div>
+
+<div *ngIf="isSignedIn">
+ <a href="login"> <button (click)="logout()">Logout</button></a>
+</div>
+
